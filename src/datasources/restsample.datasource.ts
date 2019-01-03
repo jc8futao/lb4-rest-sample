@@ -1,4 +1,4 @@
-import { juggler } from '@loopback/service-proxy' ;
+import {juggler} from '@loopback/service-proxy';
 import * as config from './rest.config.json';
 
 export class RestSampleDataSource extends juggler.DataSource {

@@ -1,4 +1,3 @@
-
 import {RestServiceApplication} from '../';
 import {
   createRestAppClient,
@@ -6,10 +5,11 @@ import {
   Client,
 } from '@loopback/testlab';
 
+import {RestSampleDataSource} from '../src/datasources/restsample.datasource';
 
-import { RestSampleDataSource } from '../src/datasources/restsample.datasource';
-
-export async function givenAConnectedDataSource(): Promise<RestSampleDataSource> {
+export async function givenAConnectedDataSource(): Promise<
+  RestSampleDataSource
+> {
   const calculatorDataSource = new RestSampleDataSource();
   await calculatorDataSource.connect();
   return calculatorDataSource;

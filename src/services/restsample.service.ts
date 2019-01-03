@@ -1,6 +1,6 @@
-import {getService, juggler, GenericService} from '@loopback/service-proxy';
+import {getService, juggler} from '@loopback/service-proxy';
 import {inject, Provider} from '@loopback/core';
-import { RestSampleDataSource } from '../datasources/restsample.datasource';
+import {RestSampleDataSource} from '../datasources/restsample.datasource';
 
 export interface RestSampleResponseData {
   userId: number;

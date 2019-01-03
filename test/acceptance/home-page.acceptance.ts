@@ -1,6 +1,6 @@
-import { Client } from '@loopback/testlab';
-import { RestServiceApplication } from '../..';
-import { setupApplication } from '../helpers';
+import {Client} from '@loopback/testlab';
+import {RestServiceApplication} from '../..';
+import {setupApplication} from '../helpers';
 
 describe('HomePage', () => {
   let app: RestServiceApplication;

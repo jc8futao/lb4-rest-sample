@@ -1,5 +1,5 @@
 import {Client, expect} from '@loopback/testlab';
-import { RestServiceApplication } from '../..';
+import {RestServiceApplication} from '../..';
 import {setupApplication} from '../helpers';
 
 describe('RestSampleController', () => {
