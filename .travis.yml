@@ -1,0 +1,21 @@
+sudo: false
+language: node_js
+node_js:
+  - "8"
+  - "10"
+  - "11"
+
+os:
+  - linux
+  - osx
+
+script: npm run test
+env: TASK=test
+install: npm install --ignore-scripts
+
+after_success:
+  - if [[ "${TRAVIS_OS_NAME}" == "linux" ]] && [[ $(echo $TRAVIS_NODE_VERSION | cut -d'.' -f1) == "10" ]]; then npm run coverage:ci; fi
+
+branches:
+  only:
+    - master
