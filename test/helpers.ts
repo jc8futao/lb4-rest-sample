@@ -10,9 +10,9 @@ import {RestSampleDataSource} from '../src/datasources/restsample.datasource';
 export async function givenAConnectedDataSource(): Promise<
   RestSampleDataSource
 > {
-  const calculatorDataSource = new RestSampleDataSource();
-  await calculatorDataSource.connect();
-  return calculatorDataSource;
+  const restSampleDataSource = new RestSampleDataSource();
+  await restSampleDataSource.connect();
+  return restSampleDataSource;
 }
 
 export async function setupApplication(): Promise<AppWithClient> {
