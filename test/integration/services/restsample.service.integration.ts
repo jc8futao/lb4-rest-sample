@@ -1,12 +1,21 @@
-import {
-  RestSampleProvider,
-  RestSampleService,
-} from '../../../src/services/restsample.service';
-import {givenAConnectedDataSource} from '../../helpers';
-
-import {expect} from '@loopback/testlab';
+import { Client } from '@loopback/testlab';
+import { RestServiceApplication } from '../../..';
+import { RestSampleProvider, RestSampleService, } from '../../../src/services/restsample.service';
+import { givenAConnectedDataSource, setupApplication } from '../../helpers';
+import { expect } from '@loopback/testlab';
 
 describe('RestSampleService', () => {
+  let app: RestServiceApplication;
+  let client: Client;
+
+  before('setupApplication', async () => {
+    ({ app, client } = await setupApplication());
+  });
+
+  after(async () => {
+    await app.stop();
+  });
+
   let restSampleService: RestSampleService;
 
   before(givenARestSampleService);

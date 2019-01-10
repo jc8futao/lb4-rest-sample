@@ -1,7 +1,7 @@
-import {RestServiceApplication} from './application';
-import {ApplicationConfig} from '@loopback/core';
+import { RestServiceApplication } from './application';
+import { ApplicationConfig } from '@loopback/core';
 
-export {RestServiceApplication};
+export { RestServiceApplication };
 
 export async function main(options: ApplicationConfig = {}) {
   const app = new RestServiceApplication(options);
