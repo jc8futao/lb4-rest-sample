@@ -1,15 +1,16 @@
-import { Client } from '@loopback/testlab';
-import { RestServiceApplication } from '../../..';
-import { RestSampleProvider, RestSampleService, } from '../../../src/services/restsample.service';
-import { givenAConnectedDataSource, setupApplication } from '../../helpers';
-import { expect } from '@loopback/testlab';
+import {RestServiceApplication} from '../../..';
+import {
+  RestSampleProvider,
+  RestSampleService,
+} from '../../../src/services/restsample.service';
+import {givenAConnectedDataSource, setupApplication} from '../../helpers';
+import {expect} from '@loopback/testlab';
 
 describe('RestSampleService', () => {
   let app: RestServiceApplication;
-  let client: Client;
 
   before('setupApplication', async () => {
-    ({ app, client } = await setupApplication());
+    ({app} = await setupApplication());
   });
 
   after(async () => {
