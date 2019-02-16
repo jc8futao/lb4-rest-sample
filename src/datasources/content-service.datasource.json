@@ -1,0 +1,31 @@
+{
+    "name": "contentservice",
+    "connector": "rest",
+    "debug": "true",
+    "options": {
+      "headers": {
+        "accept": "application/json",
+        "content-type": "application/json"
+      }
+    },
+    "operations": [    
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://localhost:5001/api/v2.0/publications/ekgroup"      
+        },
+        "functions": {
+          "getpublication": []
+        }
+      },
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://localhost:5001/api/v2.0/page/ekgroup/ae/english/index?resolveIncludes=true&applicability=tier,visitor"      
+        },
+        "functions": {
+          "getpage": []
+        }
+      }
+    ]
+  }

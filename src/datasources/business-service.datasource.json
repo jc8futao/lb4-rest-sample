@@ -1,0 +1,49 @@
+{
+  "name": "contentservice",
+  "connector": "rest",
+  "debug": "true",
+  "options": {
+    "headers": {
+      "accept": "application/json",
+      "content-type": "application/json"
+    }
+  },
+  "operations": [    
+    {
+      "template": {
+        "method": "GET",
+        "url": "http://localhost:5005/api/v1.0/featured-fares?count=4&countryLanguage=en-ae"      
+      },
+      "functions": {
+        "getfeaturedfares": []
+      }
+    },
+    {
+      "template": {
+        "method": "GET",
+        "url": "http://localhost:5005/api/v1.0/special-offers?countryLanguage=en-ae"      
+      },
+      "functions": {
+        "getspecialoffers": []
+      }
+    },
+    {
+      "template": {
+        "method": "GET",
+        "url": "http://localhost:5005/api/v1.0/operational-updates?countrylang=en-ae&channel=emirates&newsflash=true"      
+      },
+      "functions": {
+        "getoperationaldata": []
+      }
+    },
+    {
+      "template": {
+        "method": "GET",
+        "url": "http://localhost:5005/api/v1.0/incidents/ae/english"      
+      },
+      "functions": {
+        "getincidents": []
+      }
+    }
+  ]
+}

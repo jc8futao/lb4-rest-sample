@@ -1,5 +1,5 @@
 import {inject} from '@loopback/context';
-import {RestSampleService} from '../services/restsample.service';
+import {RestSampleService} from '../services';
 import {get, param} from '@loopback/rest';
 
 export class RestSampleController {
@@ -10,7 +10,11 @@ export class RestSampleController {
 
   @get('/rest')
   getall() {
-    return this.restSampleService.getrestdata();
+    console.log(this.restSampleService)
+    return Promise.all([
+      this.restSampleService.getrestdata(2),
+      this.restSampleService.getrestdata(1)
+    ]).then((results) => results);
   }
 
   @get('/rest/{id}')
