@@ -28,7 +28,9 @@
     "test:dev": "lb-mocha --allow-console-logs dist/test/**/*.js && npm run posttest",
     "prestart": "npm run build",
     "start": "node .",
-    "prepublishOnly": "npm run test"
+    "prepublishOnly": "npm run test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git"
@@ -52,12 +54,14 @@
     "@loopback/rest": "^1.5.1",
     "@loopback/rest-explorer": "^1.1.4",
     "@loopback/service-proxy": "^1.0.5",
-    "loopback-connector-rest": "^3.4.1"
+    "loopback-connector-rest": "^3.4.1",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@loopback/build": "^1.1.0",
     "@loopback/testlab": "^1.0.3",
     "@loopback/tslint-config": "^1.0.0",
     "@types/node": "^10.11.2"
-  }
+  },
+  "snyk": true
 }
